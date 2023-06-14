@@ -1,2 +1,2 @@
 #!/bin/bash
-while read -r line; do ((count++%2 == 1)) && echo "$line"; done < input.txt
+IFS=$'\n' read -r -d '' -a lines; printf "%s\n" "${lines[@]::2}"
